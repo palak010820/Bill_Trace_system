@@ -1,0 +1,45 @@
+create table t_igp 
+  (
+    igp_no integer not null ,
+    igp_dt date not null ,
+    igp_time datetime hour to minute,
+    rr_lr_no char(20) not null ,
+    rr_lr_dt date,
+    chal_no char(10) not null ,
+    chal_dt date not null ,
+    po_typ char(1) 
+        default '1',
+    po_no integer,
+    itm_cd char(10),
+    no_pack smallint,
+    igp_qty decimal(14,4),
+    igp_stat char(1) not null ,
+    cntd_qty char(20),
+    through varchar(50),
+    comm varchar(60),
+    comm1 varchar(60),
+    comm2 varchar(60),
+    comm3 varchar(60),
+    comm4 varchar(60),
+    comm5 varchar(60),
+    state_up char(1),
+    hsn_cd integer,
+    gstin_no char(15),
+    comp_scheme char(1),
+    gst_exempt char(1),
+    unit_rt decimal(14,4),
+    cgst_pct decimal(5,2),
+    cgst_amt decimal(11,2),
+    sgst_pct decimal(5,2),
+    sgst_amt decimal(11,2),
+    igst_pct decimal(5,2),
+    igst_amt decimal(11,2),
+    
+    check (po_typ IN ('M' ,'F' ,'C' ,'I' ,'N' ,'E' )),
+    primary key (igp_no) 
+  );
+
+
+
+
+
